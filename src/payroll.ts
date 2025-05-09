@@ -1,5 +1,5 @@
 export type Salary = {
-  born: Date;
+  born: number;
   payday: Date;
   gross: number;
 };
@@ -24,6 +24,28 @@ export type Payslip = {
 
 export function calculatePayslip(salary: Salary): Payslip {
   // TODO: implement
+
+  const {
+    born, payday, gross
+  } = salary
+
+  //Yearly incomme 
+  const anuel = gross * 12
+
+  function calculateage(){
+    const age = 2025 - born;
+  }
+const deductions: Deductions = {
+  AHV: 0,
+  IV: 0,
+  EO: 0,
+  ALV: 0,
+  NBU: 0,
+  PK: 0,
+}
+if (age>=18){
+  deductions.AHV 
+}
   const result: Payslip = {
     salary: salary,
     deductions: new Map(),
@@ -32,3 +54,4 @@ export function calculatePayslip(salary: Salary): Payslip {
   };
   return result;
 }
+
